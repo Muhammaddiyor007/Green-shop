@@ -31,7 +31,7 @@ const Hero = () => {
 	const progressCircle = useRef(null)
 	const progressContent = useRef(null)
 
-	const onAutoplayTimeLeft = (swiper, timeLeft, progress) => {
+	const onAutoplayTimeLeft = (swiper, timeLeft) => {
 		const totalTime = swiper.params.autoplay.delay
 		const elapsed = totalTime - timeLeft
 		progressCircle.current.style.setProperty('--progress', elapsed / totalTime)
@@ -56,7 +56,7 @@ const Hero = () => {
 				spaceBetween={30}
 				centeredSlides={true}
 				autoplay={{
-					delay: 2500,
+					delay: 3000,
 					disableOnInteraction: false,
 				}}
 				pagination={{
@@ -71,7 +71,7 @@ const Hero = () => {
 					<SwiperSlide key={idx}>
 						<div className='flex items-center justify-between h-full px-10 font-inter '>
 							<div className='max-w-[600px] relative z-50'>
-								<p className='text-[#3D3D3D] text-[11px] md:text-[14px] uppercase tracking-[10%] leading-[16px] font-medium mb-2 bg-white md:bg-transparent w-fit inline-block '>
+								<p className='text-[#564545] text-[11px] md:text-[14px] uppercase tracking-[10%] leading-[16px] font-medium mb-2 bg-white md:bg-transparent w-fit inline-block '>
 									{slide.greetings}
 								</p>
 								{renderTitle(slide.title)}

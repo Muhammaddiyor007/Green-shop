@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MainLayout from './Layout/MainLayout'
 import Home from './pages/Home/Home'
-import MenuAuth from './Components/Menu/MenuAuth'
 
 function App() {
 	return (
@@ -11,7 +10,6 @@ function App() {
 					<Route element={<MainLayout />}>
 						<Route path='/' element={<Home />} />
 					</Route>
-	
 				</Routes>
 			</BrowserRouter>
 		</>

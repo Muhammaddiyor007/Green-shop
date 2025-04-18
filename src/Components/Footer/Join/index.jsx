@@ -11,7 +11,7 @@ import React from 'react'
 const Join = () => {
 	return (
 		<div className='font-inter flex flex-col md:flex-row items-center gap-y-[30px] bg-[#FBFBFB] py-[32px] md:px-[23px] px-[15px]'>
-			<Card sx={{ maxWidth: 261, bgcolor: 'transparent' }}>
+			<Card sx={{ bgcolor: 'transparent' }}>
 				<CardActionArea className=''>
 					<div className='text-center px-[23px] pt-[25px]'>
 						<img src='/join1.svg' alt='' />
@@ -39,7 +39,7 @@ const Join = () => {
 				</CardActionArea>
 			</Card>
 
-			<Card sx={{ maxWidth: 261, bgcolor: 'transparent' }}>
+			<Card sx={{ bgcolor: 'transparent' }}>
 				<CardActionArea className=''>
 					<div className='text-center px-[23px] pt-[25px]'>
 						<img src='/join2.svg' alt='' />
@@ -67,7 +67,7 @@ const Join = () => {
 				</CardActionArea>
 			</Card>
 
-			<Card sx={{ maxWidth: 261, bgcolor: 'transparent' }}>
+			<Card sx={{ bgcolor: 'transparent' }}>
 				<CardActionArea className=''>
 					<div className='text-center px-[23px] pt-[25px]'>
 						<img src='/join1.svg' alt='' />

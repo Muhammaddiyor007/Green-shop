@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import 'typeface-inter'
 import { setAnchorEl } from '../../redux/reduxers/menuSlice'
+import { openAuthFun } from '../../redux/reduxers/authSlice'
 
 const CartBadge = styled(Badge)`
 	& .${badgeClasses.badge} {
@@ -67,6 +68,7 @@ const Navigation = () => {
 						variant='contained'
 						color='primary'
 						className='gap-[4px] rounded-[6px] '
+						onClick={()=>{dispatch(openAuthFun())}}
 					>
 						<LoginIcon />
 						Login
