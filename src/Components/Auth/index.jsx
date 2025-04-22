@@ -1,55 +1,70 @@
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined'
-import GoogleIcon from '@mui/icons-material/Google'
-import Button from '@mui/material/Button'
-import React from 'react'
+import React, { useState } from 'react'
+import { Modal, Tabs, Button } from 'antd'
+import SignIN from './Signin'
+import SignUp from './Signup'
 import { useDispatch, useSelector } from 'react-redux'
-import { closeAuthFun } from '../../redux/reduxers/authSlice.js'
-import Login from './Signin'
+import { closeModal } from '../../redux/reduxers/authSlice'
 
-const Auth = () => {
-	const isOpenAuth = useSelector(state => state.isOpenAuth.openAuth)
+const MyModal = () => {
 	const dispatch = useDispatch()
+	const isOpen = useSelector(state => state.modal.isOpen)
+	const [activeTab, setActiveTab] = useState('1')
+
+	const handleTabChange = key => {
+		setActiveTab(key)
+	}
+
+	const tabItems = [
+		{
+			label: (
+				<span
+					style={{
+						fontWeight: 500,
+						fontSize: '20px',
+						lineHeight: '16px',
+						color: activeTab === '1' ? '#46A358' : '#3d3d3d',
+					}}
+				>
+					Login
+				</span>
+			),
+			key: '1',
+			children: <SignIN />,
+		},
+		{
+			label: (
+				<span  style={{
+          fontWeight: 500,
+          fontSize: '20px',
+          lineHeight: '16px',
+          color: activeTab === '2' ? '#46A358' : '#3d3d3d',
+        }}>Register</span>
+			),
+			key: '2',
+			children: <SignUp />,
+		},
+	]
 
 	return (
-		<div
-			className={`${
-				isOpenAuth ? '' : 'scale-0 translate-x-full -translate-y-full '
-			} duration-[0.3s] fixed top-0 left-0 w-full h-[100vh] bg-black bg-opacity-30 z-50`}
-		>
-			<div className='max-w-[500px] py-[50px] px-[100px] min-h-[600px] mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-center border-b-[#46A358] border-b-[10px]'>
-				<div className='nav absolute right-[11px] top-[11px]'>
-					<CloseOutlinedIcon
-						className='hover:text-[#46A358] duration-[1s]'
-						onClick={() => {
-							dispatch(closeAuthFun())
-						}}
+		<div className='px-[20px]'>
+			<Modal
+				open={isOpen}
+				onCancel={() => dispatch(closeModal())}
+				footer={null}
+     
+			>
+				<div style={{ display: 'flex', justifyContent: 'center' }}>
+					<Tabs
+						activeKey={activeTab}
+						onChange={handleTabChange}
+						items={tabItems}
+						centered
+            rootClassName="custom-tabs"
 					/>
 				</div>
-
-				<Login />
-
-				<div className='end'>
-					<div className='mb-[15px] w-full'>
-						<Button
-							type='button'
-							variant='outlined'
-							className='w-full h-[40px] gap-[10px] flex items-center'
-						>
-							<GoogleIcon /> Login with Google
-						</Button>
-					</div>
-					<Button
-						type='button'
-						variant='outlined'
-						className='w-full h-[40px] gap-[10px] flex items-center'
-					>
-						<FacebookOutlinedIcon /> Login with Facebook
-					</Button>
-				</div>
-			</div>
+			</Modal>
 		</div>
 	)
 }
 
-export default Auth
+export default MyModal

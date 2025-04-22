@@ -4,6 +4,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import App from './App.jsx'
+import OpenProvider from './ContexApi/Context.jsx'
 import './index.css'
 import { Store } from './redux/store.js'
 import theme from './theme.js'
@@ -14,9 +15,11 @@ createRoot(document.getElementById('root')).render(
 	<StrictMode>
 		<QueryClientProvider client={queryClient}>
 			<Provider store={Store}>
-				<ThemeProvider theme={theme}>
-					<App />
-				</ThemeProvider>
+				<OpenProvider>
+					<ThemeProvider theme={theme}>
+						<App />
+					</ThemeProvider>
+				</OpenProvider>
 			</Provider>
 		</QueryClientProvider>
 	</StrictMode>

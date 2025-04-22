@@ -7,11 +7,13 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import 'typeface-inter'
 import { setAnchorEl } from '../../redux/reduxers/menuSlice'
-import { openAuthFun } from '../../redux/reduxers/authSlice'
+import { openModal } from '../../redux/reduxers/authSlice'
+import { selectUserInfo } from '../../redux/reduxers/selectUserInfo'
+
 
 const CartBadge = styled(Badge)`
 	& .${badgeClasses.badge} {
@@ -21,12 +23,14 @@ const CartBadge = styled(Badge)`
 `
 
 const Navigation = () => {
+	const { token, name } = useSelector(selectUserInfo)
+	const nav = useNavigate()
+
 	const open = () => {
 		dispatch(setAnchorEl(true))
 	}
 
 	const dispatch = useDispatch()
-
 
 	return (
 		<div className='flex px-[15px] md:px-[0] justify-between items-center md:border-b-[#46A35880] pb-[18px] md:border-b-[0.3px]'>
@@ -64,15 +68,29 @@ const Navigation = () => {
 				</IconButton>
 
 				<div className='hidden md:block'>
-					<Button
-						variant='contained'
-						color='primary'
-						className='gap-[4px] rounded-[6px] '
-						onClick={()=>{dispatch(openAuthFun())}}
-					>
-						<LoginIcon />
-						Login
-					</Button>
+					{token ? (
+						(<Button
+							variant='contained'
+							color='primary'
+							className='gap-[4px] rounded-[6px] '
+							onClick={() => {
+								nav('/profil')
+							}}
+						>
+							{name}
+						</Button>)
+					) : (
+						<Button
+							variant='contained'
+							color='primary'
+							className='gap-[4px] rounded-[6px] '
+							onClick={() => {
+								dispatch(openModal())
+							}}
+						>
+							<LoginIcon />
+						</Button>
+					)}
 				</div>
 
 				<div className='md:hidden'>

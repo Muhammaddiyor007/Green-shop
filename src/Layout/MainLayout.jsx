@@ -17,7 +17,6 @@ const MainLayout = () => {
 			<Menu />
 			<Auth />
 			<Outlet />
-		
 			<Footer />
 		</div>
 	)

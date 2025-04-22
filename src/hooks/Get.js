@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import apiAxios from '../api/api.jsx'
+import apiAxios from '../api/api.jsx'  
 
 const useGetApi = (url = {}) => {
 	const axiosData = async () => {

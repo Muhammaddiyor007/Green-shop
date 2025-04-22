@@ -1,22 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+
 
 const initialState = {
-	openAuth: false,
-}
+  isOpen: false, 
+};
 
-const authSlice = createSlice({
-	name: 'isOpenAuth',
-	initialState,
-	reducers: {
-		openAuthFun: (state) => {
-			state.openAuth = true
-		},
-		closeAuthFun: state => {
-			state.openAuth = false
-		},
-	},
-})
+const modalSlice = createSlice({
+  name: 'modal',
+  initialState,
+  reducers: {
+    openModal: (state) => {
+      state.isOpen = true;  
+    },
+    closeModal: (state) => {
+      state.isOpen = false; 
+    },
+  },
+});
 
-export const { openAuthFun, closeAuthFun } = authSlice.actions
 
-export default authSlice.reducer
+export const { openModal, closeModal } = modalSlice.actions;
+
+
+export default modalSlice.reducer;
