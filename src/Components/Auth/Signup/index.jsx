@@ -6,9 +6,9 @@ import {
 } from '@ant-design/icons'
 import { Form, Input, message } from 'antd'
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import apiAxios from '../../../api/api'
 import { closeModal } from '../../../redux/reduxers/authSlice'
-import { useDispatch } from 'react-redux'
 
 const SignUp = () => {
 	const [showPassword, setShowPassword] = useState(false)
@@ -26,12 +26,18 @@ const SignUp = () => {
 					surname,
 				}
 			)
-      localStorage.setItem('token', JSON.stringify(response.data.data.token))
+			localStorage.setItem('token', JSON.stringify(response.data.data.token))
 			localStorage.setItem('name', JSON.stringify(response.data.data.user.name))
-			localStorage.setItem('surName', JSON.stringify(response.data.data.user.surname))
-			localStorage.setItem('email', JSON.stringify(response.data.data.user.email))
+			localStorage.setItem(
+				'surName',
+				JSON.stringify(response.data.data.user.surname)
+			)
+			localStorage.setItem(
+				'email',
+				JSON.stringify(response.data.data.user.email)
+			)
 			dispatch(closeModal())
-			
+
 			return response.data
 		} catch (error) {
 			console.error(error)
@@ -48,7 +54,7 @@ const SignUp = () => {
 		<Form
 			name='sign-up'
 			onFinish={onFinish}
-      className='w-[300px] sm:w-[360px] mx-auto px-[10px]'
+			className='w-[300px] sm:w-[360px] mx-auto px-[10px]'
 			layout='vertical'
 		>
 			<div className='font-inter text-[13px] leading-[16px] mb-[16px] text-[#3d3d3d] mt-[53px]'>

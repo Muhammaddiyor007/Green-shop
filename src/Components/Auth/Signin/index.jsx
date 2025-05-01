@@ -1,14 +1,13 @@
-
 import {
 	EyeInvisibleOutlined,
 	EyeOutlined,
 	FacebookOutlined,
 	GoogleOutlined,
 } from '@ant-design/icons'
-import { Button, Form, Input, message } from 'antd'
+import { Form, Input, message } from 'antd'
 import React, { useState } from 'react'
-import apiAxios from '../../../api/api'
 import { useDispatch } from 'react-redux'
+import apiAxios from '../../../api/api'
 import { login } from '../../../redux/reduxers/AutheSlice'
 import { closeModal } from '../../../redux/reduxers/authSlice'
 
@@ -116,14 +115,13 @@ const SignIN = () => {
 					</button>
 
 					<button
-					type='button'
-					className='h-[40px] gap-[10px] flex items-center'
-				>
-					<FacebookOutlined />
-					Login with Facebook
-				</button>
+						type='button'
+						className='h-[40px] gap-[10px] flex items-center'
+					>
+						<FacebookOutlined />
+						Login with Facebook
+					</button>
 				</div>
-				
 			</div>
 		</Form>
 	)

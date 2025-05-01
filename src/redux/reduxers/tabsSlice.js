@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    value: 0, // Значение текущего таба
+    value: 0, 
 };
 
 const tabsSlice = createSlice({
