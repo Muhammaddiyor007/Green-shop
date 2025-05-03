@@ -4,6 +4,8 @@ import modalReducer from './reduxers/authSlice'
 import defoldArrSlice from './reduxers/defoldArrSlice'
 import menuReducer from './reduxers/menuSlice'
 import tabsReducer from './reduxers/tabsSlice'
+import shoppingSlice from './shopSlice'
+
 
 export const Store = configureStore({
 	reducer: {
@@ -12,5 +14,6 @@ export const Store = configureStore({
 		modal: modalReducer,
 		defoldArr: defoldArrSlice,
 		tabs: tabsReducer,
+		shopping: shoppingSlice,
 	},
 })
