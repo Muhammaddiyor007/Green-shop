@@ -10,7 +10,7 @@ import WishList from './pages/UserProfile/wishlist'
 import Profil from './pages/UserProfile/Profil'
 
 import UserPofil from './pages/UserProfile'
-import Shoping from './pages/Shoping'
+import Shoping from './pages/shoping'
 import ProductCheckout from './pages/productCheckout'
 
 function App() {
