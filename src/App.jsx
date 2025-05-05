@@ -2,14 +2,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Auth from './Components/Auth'
 
 import MainLayout from './Layout/MainLayout'
-import Address from './pages/UserProfile/myProducts/adress'
+import Address from './pages/userPofil/myProducts/addres'
 import Home from './pages/Home/Home'
-import MyProducts from './pages/UserProfile/myProducts'
-import TrackOrder from './pages/UserProfile/trackorder'
-import WishList from './pages/UserProfile/wishlist'
-import Profil from './pages/UserProfile/Profil'
+import MyProducts from './pages/userPofil/myProducts'
+import TrackOrder from './pages/userPofil/trackorder'
+import WishList from './pages/userPofil/wishlist'
+import Profil from './pages/userPofil/Profil'
 
-import UserPofil from './pages/UserProfile'
+import UserPofil from './pages/userPofil'
 import Shoping from './pages/shoping'
 import ProductCheckout from './pages/productCheckout'
 
@@ -29,6 +29,7 @@ function App() {
 						</Route>
 						<Route path='/product-card' element={<Shoping/>}  />
 						<Route path='/product-checkout' element={<ProductCheckout/>}  />
+
 					</Route>
 					<Route path='/auth' element={<Auth />} />
 				</Routes>
