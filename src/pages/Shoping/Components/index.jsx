@@ -15,7 +15,7 @@ const ShopingComponents = () => {
 						carts.length ?(<ShowShopProducts />):(<NoProfuct />)
 					}
 					
-					
+
 				</div>
 				<div className='md:w-[35%] px-[15px]'>
 					<CardTotal />

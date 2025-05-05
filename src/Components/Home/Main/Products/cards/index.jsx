@@ -95,7 +95,7 @@ const Cards = () => {
 													className='w-[187px] h-[187px] mx-auto'
 													alt=''
 												/>
-												<div className='icons flex gap-[10px] justify-center absolute bottom-[5px] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 duration-[0.3s]'>
+												<div className='icons flex gap-[10px] justify-center absolute bottom-[5px] left-1/2 transform -translate-x-1/2 scale-100 duration-[0.3s]'>
 													<div className='px-[5px] py-[5px] bg-white rounded-[8px]' onClick={()=>{handleAdd(obj)}}>
 														<ShoppingCartOutlinedIcon />
 													</div>
@@ -161,7 +161,7 @@ const Cards = () => {
 													className='w-[187px] h-[187px] mx-auto'
 													alt=''
 												/>
-												<div className='icons flex gap-[10px] justify-center absolute bottom-[5px] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 duration-[0.3s]'>
+												<div className='icons flex gap-[10px] justify-center absolute bottom-[5px] left-1/2 transform -translate-x-1/2 scale-100 duration-[0.3s]'>
 													<div className='px-[5px] py-[5px] bg-white rounded-[8px]'>
 														<ShoppingCartOutlinedIcon />
 													</div>
@@ -227,18 +227,17 @@ const Cards = () => {
 													className='w-[187px] h-[187px] mx-auto'
 													alt=''
 												/>
-												<div className='icons flex gap-[10px] justify-center absolute bottom-[5px] left-1/2 transform -translate-x-1/2 scale-100 duration-[0.3s]'>
-	<div className='px-[5px] py-[5px] bg-white rounded-[8px]'>
-		<ShoppingCartOutlinedIcon />
-	</div>
-	<div className='px-[5px] py-[5px] bg-white rounded-[8px]'>
-		<FavoriteBorderOutlinedIcon />
-	</div>
-	<div className='px-[5px] py-[5px] bg-white rounded-[8px]'>
-		<SearchOutlinedIcon />
-	</div>
-</div>
-
+												<div className='icons flex gap-[10px] justify-center absolute bottom-[5px] left-1/2 transform -translate-x-1/2  scale-100 duration-[0.3s]'>
+													<div className='px-[5px] py-[5px] bg-white rounded-[8px]'>
+														<ShoppingCartOutlinedIcon />
+													</div>
+													<div className='px-[5px] py-[5px] bg-white rounded-[8px]'>
+														<FavoriteBorderOutlinedIcon />
+													</div>
+													<div className='px-[5px] py-[5px] bg-white rounded-[8px]'>
+														<SearchOutlinedIcon />
+													</div>
+												</div>
 											</div>
 											<h2 className='mt-[12px] mb-[6px] font-inter text-[20px] font-bold leading-[16px] text-[#3D3D3D]'>
 												{title}
