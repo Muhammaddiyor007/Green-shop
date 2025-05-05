@@ -11,7 +11,7 @@ import Profil from './pages/UserProfile/Profil'
 
 import UserPofil from './pages/UserProfile'
 import Shoping from './pages/Shoping'
-import ProductCheckout from './pages/Shoping'
+import ProductCheckout from './pages/productCheckout'
 
 function App() {
 	return (

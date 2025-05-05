@@ -15,7 +15,7 @@ const CardTotal = () => {
 				<form action=''>
 					<Space.Compact style={{ width: '100%' }}>
 						<Input defaultValue='' />
-						<button className='bg-[#46A538] text-white font-semibold px-3 py-2 rounded-[5px]' type='primary'>Apply</button>
+						<Button type='primary'>Apply</Button>
 					</Space.Compact>
 				</form>
 				<div className="text-[#00000073] text-[14px] grid gap-[16px] mt-[16px]">
