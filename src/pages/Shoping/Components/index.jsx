@@ -18,7 +18,7 @@ const ShopingComponents = () => {
 
 				</div>
 				<div className='md:w-[35%] px-[15px]'>
-					<CardTotal />
+					<CardTotal/>
 				</div>
 			</div>
 		</div>
